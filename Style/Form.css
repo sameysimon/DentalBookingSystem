@@ -11,9 +11,12 @@ form {
     
 }
 
-.loginTextFields {
+ .textFields {
     margin-left: auto;
     margin-right: auto;
+}
+input {
+    padding: 2px;
 }
 .submitButton {
     width: 100px;
