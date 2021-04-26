@@ -6,6 +6,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <?php
+        if (isset($_SESSION["username"]) == false) {
+            //Hasn't logged in yet, send back to login page.
+            header("Location: Login.php");
+            exit();
+        }
+        $username = ;
+    ?>
     <div class="Content">
         <h1>Welcome, Simon</h1>
         <div class="options">
