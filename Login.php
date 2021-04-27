@@ -43,7 +43,7 @@
                     } else {
                         session_start();
                         $_SESSION["username"] = $_REQUEST["username"];
-                        header("Location: DentalHome.php", true, 301);
+                        header("Location: StaffHome.php", true, 301);
                         exit();
                     }
                 }
