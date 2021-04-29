@@ -13,7 +13,6 @@
     <div class="Content">
         <h1>Dentist Booking System</h1>
         <?php
-            
             $errorMsg;
             if (isset($_REQUEST["Login-Type"])) {
                 //Details have been entered.
