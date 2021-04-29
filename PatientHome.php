@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./Style/Style.css">
     <link rel="stylesheet" href="./Style/Home.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <?php
@@ -29,7 +30,10 @@
         <div class="options">
             <a href=""><button>Request an appointment</button></a>
             <a href=""><button>View next appointment</button></a>
-            <a href=""><button>Quit</button></a>
+            <a href=""><button>Change password</button></a>
+            <a href="FunctionLibrary/Logout.php"><button>Logout</button></a>
+           
+
         </div>
         <div class="info">
             <?php
@@ -37,7 +41,6 @@
                 if (isset($info["Dentist_Name"])) {
                     echo "<p>Your current dentist is " . $info["Dentist_Name"] . ".</p>";
                 }
-                session_abort();
             ?>
         </div>
     </div>

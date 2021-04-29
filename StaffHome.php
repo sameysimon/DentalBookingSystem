@@ -14,24 +14,26 @@
         if (isset($_SESSION["username"]) == false) {
             //Hasn't logged in yet, send to login page.
             header("Location: Login.php");
-            session_abort();
+            session_destroy();
             exit();
         }
-        $patientID = $_SESSION["username"];
-        echo $patientID;
-        $stmt = queryDatabase("SELECT Dentist.name AS 'Dentist_Name' FROM Dentist WHERE Dentist.dentistID = Patient.dentistID");
+        $dentistID = $_SESSION["username"];
+        echo $dentistID;
+        $stmt = queryDatabase("SELECT Dentist.name AS 'Dentist_Name' FROM Dentist WHERE Dentist.dentistID = $dentistID");
         $info = $stmt->fetch();
     ?>
     <div class="Content">
         <?php
             echo "<h1>Welcome, " . $info["Dentist_Name"] . ".</h1>";
+            session_abort();
         ?>
         <div class="options">
             <a href=""><button>Create an appointment</button></a>
             <a href=""><button>View appointments</button></a>
             <a href=""><button>Book Equipment</button></a>
             <a href=""><button>View patients</button></a>
-            <a href=""><button>Quit</button></a>
+            <a href=""><button>Change Password</button></a>
+            <a href="FunctionLibrary/Logout.php"><button>Logout</button></a>
         </div>
         <div class="info">
             <p>(Static) Your next appointment is with Mr Simon Kolker on June 23rd, 2020.</p>
