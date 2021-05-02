@@ -1,6 +1,8 @@
 <?php 
     session_start();
     include 'FunctionLibrary/QueryDatabase.php';
+    include 'FunctionLibrary/CheckLogin.php';
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -11,15 +13,10 @@
 </head>
 <body>
     <?php
-        if (isset($_SESSION["username"]) == false) {
-            //Hasn't logged in yet, send to login page.
-            header("Location: Login.php");
-            session_destroy();
-            exit();
-        }
         $dentistID = $_SESSION["username"];
-        echo $dentistID;
-        $stmt = queryDatabase("SELECT Dentist.name AS 'Dentist_Name' FROM Dentist WHERE Dentist.dentistID = $dentistID");
+        
+        $stmt = queryDatabase("SELECT name AS 'Dentist_Name' FROM Dentist WHERE dentistID = '" . $_SESSION["username"] . "'");
+        $_SESSION["name"] = $info["Dentist_Name"];
         $info = $stmt->fetch();
     ?>
     <div class="Content">
@@ -29,8 +26,8 @@
         ?>
         <div class="options">
             <a href=""><button>Create an appointment</button></a>
-            <a href=""><button>View appointments</button></a>
-            <a href=""><button>Book Equipment</button></a>
+            <a href="./ViewAppointments.php"><button>View appointments</button></a>
+            <a href="./ViewEquipment.php"><button>Book/View Equipment</button></a>
             <a href=""><button>View patients</button></a>
             <a href=""><button>Change Password</button></a>
             <a href="FunctionLibrary/Logout.php"><button>Logout</button></a>

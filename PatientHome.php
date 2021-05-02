@@ -1,6 +1,7 @@
 <?php 
     session_start();
     include 'FunctionLibrary/QueryDatabase.php';
+    include 'FunctionLibrary/CheckLogin.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -12,14 +13,7 @@
 </head>
 <body>
     <?php
-        if (isset($_SESSION["username"]) == false) {
-            //Hasn't logged in yet, send to login page.
-            header("Location: Login.php");
-            session_abort();
-            exit();
-        }
         $patientID = $_SESSION["username"];
-        echo $patientID;
         $stmt = queryDatabase("SELECT Patient.name AS 'Patient_Name', Dentist.name AS 'Dentist_Name' FROM Patient, Dentist WHERE Patient.PatientID = $patientID AND Dentist.dentistID = Patient.dentistID");
         $info = $stmt->fetch();
     ?>

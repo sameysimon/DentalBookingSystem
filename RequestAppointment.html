@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="./Style/Form.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+    
 </head>
 <body>
     <div class="Content">
@@ -12,21 +13,21 @@
         <div class="centerFields">
             <form action="" method="POST">
                 <p>Choose an appointment time with Dr Gairing. We'll let you know when your appointment's been confirmed.</p>
-                <div class="textFields">
-                    Available Times: <select name="AppointmentTime" id="select" required>
-                        <option value="">Select a time</option>
-                        <option value="June 24th, 2020, 10:30">June 24th, 2020, 10:30</option>
-                        <option value="June 24th, 2020, 11:30">June 24th, 2020, 11:30</option>
-                        <option value="June 24th, 2020, 12:30">June 24th, 2020, 12:30</option>
-                    </select> <br/>
-                    Note: <input type="text" name="note" id="note">
+                <div class="timeSelect">
+                    <label for="date">Appointment Date:</label>
+                    <input type="date" name="appointmentDate">
+                    <label for="analogueClock">Select Time:</label>
+                    <div class="timeSelection">
+                        <canvas id="clock" width="300" height="300"></canvas>
+                        <script src="./clock.js" type="text/javascript"></script>
+                    </div>
+                    
+
                 </div>
                 <input class="submitButton" value="Request" type="submit">
             </form>
         </div>
-        <script>
-
-        </script>
     </div>
 </body>
+
 </html>
