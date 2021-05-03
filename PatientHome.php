@@ -15,6 +15,7 @@
     <?php
         $patientID = $_SESSION["username"];
         $stmt = queryDatabase("SELECT Patient.name AS 'Patient_Name', Dentist.name AS 'Dentist_Name' FROM Patient, Dentist WHERE Patient.PatientID = $patientID AND Dentist.dentistID = Patient.dentistID");
+        $_SESSION["userType"] = "Patient";
         $info = $stmt->fetch();
     ?>
     <div class="Content">

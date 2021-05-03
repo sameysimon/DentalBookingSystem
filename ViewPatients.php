@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include 'FunctionLibrary/CheckLogin.php';//Check if user is logged in. If not, kick.
-    include 'FunctionLibrary/AppointmentTable.php';//Import appointment Table generator.
+    include 'FunctionLibrary/PatientTable.php';//Import appointment Table generator.
     
 ?>
 <!DOCTYPE html>
@@ -14,10 +14,10 @@
 <body>
     <div class="Content">
     <a href="./StaffHome.php"><button class="BackButton">Home</button></a>
-        <h1>View Appointments</h1>
+        <h1>View Patients</h1>
         <div class="equipmentTable">
-            <p>Below are your appointments: </p>
-            <?php getAppointments($_SESSION["username"]); ?>
+            <p>Below are your patients: </p>
+            <?php getPatients($_SESSION["username"]); ?>
             
         </div>
     </div>

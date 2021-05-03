@@ -9,9 +9,22 @@ body {
 
     background-color: white;
     width: 55vw;
-    height: 55vh;
+    min-height: 55vh;
     
     border-radius: 10px;
     padding: 30px;
 }
+h1 {
+    margin-top: 0;
+}
 
+ .BackButton {
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 90%;
+    margin-right: 30px;
+    border-radius: 5px;
+ }

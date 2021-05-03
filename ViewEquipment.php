@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include 'FunctionLibrary/QueryDatabase.php';
-    
+    include 'FunctionLibrary/CheckLogin.php';
     if (isset($_SESSION["branchID"]) == false) {
         //Don't have branch ID yet as Session variable, so grab it.
         $username = $_SESSION["username"];
@@ -21,6 +21,7 @@
 </head>
 <body>
     <div class="Content">
+        <a href="./StaffHome.php"><button class="BackButton">Home</button></a>
         <h1>View Equipment</h1>
         <div class="equipmentTable">
             <p>Below is the equipment accessable at the branch.</p>

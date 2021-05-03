@@ -56,7 +56,7 @@
                     <input type="radio" name="Login-Type" value="Patient" checked> Patient
                     <input type="radio" name="Login-Type" value="Dentist"> Dentist
                 </div>
-                <div class="loginTextFields">
+                <div class="smallTextFields">
                     Username: <input type="text" name="username" id="userName" required> <br/>
                     Password: <input type="password" name="password" id="password" required>
                 </div>
